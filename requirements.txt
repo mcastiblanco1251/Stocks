@@ -3,12 +3,6 @@ pandas==1.1.5
 numpy==1.18.1
 scikit-learn==0.21.3
 matplotlib==3.1.1
-
+tensorflow==2.0.1
 pandas_datareader 
-tensorflow.keras.models 
-Sequential
-tensorflow.keras.layers 
-Dense
-LSTM
-Dropout
 yfinance 
