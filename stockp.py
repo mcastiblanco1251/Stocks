@@ -14,6 +14,7 @@ from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import date
 from PIL import Image
+import smtplib
 
 im = Image.open("bolsa.jpg")
 st.set_page_config(page_title='DeepLearningLSTM', layout="wide", page_icon=im)
@@ -29,7 +30,7 @@ row1_1, row1_2 = st.columns((2,3))
 with row1_1:
     image = Image.open('stock.jpg')
     st.image(image, use_column_width=True)
-    st.markdown('Web App by [Manuel Castiblanco](https://github.com/mcastiblanco1251)')
+    st.markdown('Web App by [Manuel Castiblanco](http://ia.smartecorganic.com.co/)')
 with row1_2:
     st.write("""
     # Stock Prediction App
@@ -67,7 +68,7 @@ with app_des:
 
     LSTMs are explicitly designed to avoid the long-term dependency problem. Remembering information for long periods of time is practically their default behavior, not something they struggle to learn!
 
-    All recurrent neural networks have the form of a chain of repeating modules of neural network. 
+    All recurrent neural networks have the form of a chain of repeating modules of neural network.
         """)
 
 
