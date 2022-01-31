@@ -105,7 +105,7 @@ row2_1, row2_2, = st.columns((2,2))
 
 with row2_1:
     st.subheader('Stock Graphic Currency')
-    plt.figure(figsize=(12,16))
+    plt.figure(figsize=(12,10))
     plt.title('Close Price History')
     plt.plot(df2['Close'])
     plt.xlabel('Date',fontsize=18)
@@ -259,7 +259,7 @@ row3_1, row3_2, = st.columns((2,2))
 with row3_1:
 #Visualize the data
     st.subheader('Graphic Real an Predictions Prices')
-    plt.figure(figsize=(12,16))
+    plt.figure(figsize=(12,10))
     plt.title('Model')
     plt.xlabel('Date', fontsize=18)
     plt.ylabel('Close Price USD ($)', fontsize=18)
