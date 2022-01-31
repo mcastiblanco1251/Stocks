@@ -92,11 +92,12 @@ else:
 #st.subheader(name)
 #data = pdr.get_data_yahoo("SPY", start="2017-01-01", end="2017-04-30")
         df=pdr.get_data_yahoo(stock, start='2012-01-01', end=end)
-        return name, df
+        return name, df, end
     df=user_input_features()
-name=df[0]
 df2=df[1]
-st.subheader('Representation')
+name=df[0]
+end=df[2]
+st.header('Representation')
 
 st.subheader('Company Name: '+ name )
 
@@ -113,7 +114,7 @@ with row2_1:
 
 with row2_2:
     st.subheader('Stock Table Currency')
-    st.write(df2.head(-1))
+    st.write(df2.tail(12))
 
 
 #Create a new dataframe with only the 'Close' column
@@ -233,7 +234,7 @@ st.write(pd.DataFrame({'RMSE': rmse, 'R2':r2, 'MSE':mse,'MAE':mae}, columns=['RM
 
 
 if r2>=0.90:
-    st.write('**Great Performance**')
+    st.write('**Great Performance!!!**')
 elif r2>=0.8 and r2<0.9:
     st.write('**Aceptable Performance**')
 elif r2>0.6 and r2<0.8:
@@ -251,12 +252,14 @@ valid = data[training_data_len:]
 valid['Predictions'] = predictions
 #valid
 
+st.header('Prediction')
+st.subheader('Company name: ' + name)
 row3_1, row3_2, = st.columns((2,2))
 
 with row3_1:
 #Visualize the data
-    st.subheader('Prediction Graphic of: ' + name)
-    plt.figure(figsize=(12,6))
+    st.subheader('Graphic Real an Predictions Prices')
+    plt.figure(figsize=(12,12))
     plt.title('Model')
     plt.xlabel('Date', fontsize=18)
     plt.ylabel('Close Price USD ($)', fontsize=18)
@@ -269,7 +272,7 @@ with row3_1:
 
 with row3_2:
     st.subheader('Real and Predictes Prices')
-    st.write(valid.tail())
+    st.write(valid.tail(12))
 
 #Get the quote
 stock_quote = df2#pdr.get_data_yahoo(stock, start='2012-01-01', end=end)
@@ -292,7 +295,7 @@ pred_price = model.predict(X_test)
 #undo the scaling
 pred_price = scaler.inverse_transform(pred_price)
 
-st.subheader('Future Price: '+ str(pred_price))
+st.subheader(f'Future Price date {end} is {str(pred_price)}')
 #st.sidebar.text_input('Future Price:', str(pred_price))
 
 #Contact Form
