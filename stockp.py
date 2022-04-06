@@ -30,7 +30,7 @@ row1_1, row1_2 = st.columns((2,3))
 with row1_1:
     image = Image.open('stock.jpg')
     st.image(image, use_column_width=True)
-    st.markdown('Web App by [Manuel Castiblanco](http://ia.smartecorganic.com.co/)')
+    st.markdown('Web App by [Manuel Castiblanco](http://ia.smartecorganic.com.co/index.php/contact/)')
 with row1_2:
     st.write("""
     # Stock Prediction App
@@ -77,7 +77,7 @@ st.sidebar.header('Inputs User')
 uploaded_file = st.sidebar.file_uploader("Upload file CSV ", type=["csv"])
 
 if uploaded_file is not None:
-    stock = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file)
 else:
     def user_input_features():
         end= st.sidebar.date_input("Final Date")
@@ -294,12 +294,12 @@ X_test = np.reshape(X_test, (X_test.shape[0], X_test.shape[1], 1))
 pred_price = model.predict(X_test)
 #undo the scaling
 pred_price = scaler.inverse_transform(pred_price)
-
-st.subheader(f'Future Price date {end} is {str(pred_price)}')
+string = ' '.join(str(x) for x in pred_price)
+st.subheader(f'Future Price date {end} is {float(string[1:10])}')
 #st.sidebar.text_input('Future Price:', str(pred_price))
 
 #Contact Form
 
 with st.expander('Help? 👉'):
     st.markdown(
-            " App Help? contac to [Manuel Castiblanco](https://github.com/mcastiblanco1251)")
+            " App Help? contact to [Manuel Castiblanco](http://ia.smartecorganic.com.co/index.php/contact/)")
