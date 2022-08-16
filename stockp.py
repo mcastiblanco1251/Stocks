@@ -295,7 +295,7 @@ pred_price = model.predict(X_test)
 #undo the scaling
 pred_price = scaler.inverse_transform(pred_price)
 string = ' '.join(str(x) for x in pred_price)
-st.subheader(f'Future Price date {end} is USD${string[1:10]}')
+st.subheader(f'Future Price date {end} is USD${string[1:9]}')
 #st.sidebar.text_input('Future Price:', str(pred_price))
 
 #Contact Form
