@@ -1,8 +1,8 @@
-streamlit==1.10.0
-pandas==1.1.5
-numpy==1.18.1
-scikit-learn==0.21.3
-matplotlib==3.1.1
-tensorflow==2.0.1
+streamlit=>1.10.0
+pandas
+numpy
+scikit-learn
+matplotlib
+tensorflow
 pandas_datareader 
 yfinance 
