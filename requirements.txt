@@ -5,4 +5,5 @@ scikit-learn
 matplotlib
 tensorflow
 pandas_datareader 
-yfinance 
+yfinance
+protobuf==3.20
