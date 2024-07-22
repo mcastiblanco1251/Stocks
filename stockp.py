@@ -1,6 +1,6 @@
 import math
 import time
-import pandas_datareader as web
+import pandas_datareader.data as pdr 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 from datetime import date
 import streamlit as st
-from pandas_datareader import data as pdr
+#from pandas_datareader import data as pdr
 import yfinance as yf
 from datetime import date
 from PIL import Image
@@ -81,7 +81,7 @@ if uploaded_file is not None:
 else:
     def user_input_features():
         end= st.sidebar.date_input("Final Date")
-        yf.pdr_override()
+        #yf.pdr_override()
         #d=date.today()
         s_list=pd.read_csv('stocks.csv')
         stock= st.sidebar.selectbox('Select Symbol Stock',(s_list.Symbol))
@@ -91,7 +91,7 @@ else:
 
 #st.subheader(name)
 #data = pdr.get_data_yahoo("SPY", start="2017-01-01", end="2017-04-30")
-        df=pdr.get_data_yahoo(stock, start='2012-01-01', end=end)
+        df=yf.download(stock, start='2012-01-01', end=end)
         return name, df, end
     df=user_input_features()
 df2=df[1]
