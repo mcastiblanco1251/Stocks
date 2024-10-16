@@ -1,6 +1,6 @@
 streamlit
 pandas
-numpy
+numpy==1.21.6
 scikit-learn
 matplotlib
 tensorflow
