@@ -178,7 +178,7 @@ model.compile(optimizer='adam', loss='mae', metrics=['mae'])
 #st.write(str(model.summary()))
 
 #Train the model
-model.fit(x_train, y_train, batch_size=32, epochs=50)
+model.fit(x_train, y_train, batch_size=32, epochs=10)
 
 #Test data set
 test_data = scaled_data[training_data_len - 60: , : ]
