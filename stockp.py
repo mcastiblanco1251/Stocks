@@ -95,8 +95,9 @@ else:
         return name, df, end
     df=user_input_features()
 st.write(df)
+df.drop([0,1], axis=0, inplace=True)
 df2=df[1]
-df2.drop([0,1], axis=0, inplace=True)
+
 st.write(df2)
 name=df[0]
 end=df[2]
