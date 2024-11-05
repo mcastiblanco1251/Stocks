@@ -95,7 +95,7 @@ else:
         return name, df, end
     df=user_input_features()
 st.write(df)
-df.drop([0,1], axis=0, inplace=True)
+#df.drop([0,1], axis=0, inplace=True)
 df2=df[1]
 
 st.write(df2)
@@ -124,7 +124,7 @@ with row2_2:
 
 #Create a new dataframe with only the 'Close' column
 data = df2['A']
-data=data.rename(columns={'A': 'Close'})
+#data=data.rename(columns={'A': 'Close'})
 
 #data
 
