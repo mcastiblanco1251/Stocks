@@ -119,12 +119,12 @@ with row2_2:
 
 
 #Create a new dataframe with only the 'Close' column
-data = df2.filter(['Close'])
+data = df2.filter(['Close'])[2:]
 st.write(data)
 #data
 
 #Converting the dataframe to a numpy array
-dataset = data.values
+dataset = data[1:]
 #dataset
 
 #Get /Compute the number of rows to train the model on
