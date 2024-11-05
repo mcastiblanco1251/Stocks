@@ -96,6 +96,7 @@ else:
     df=user_input_features()
 st.write(df)
 df2=df[1]
+st.write(df2)
 name=df[0]
 end=df[2]
 
