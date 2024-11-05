@@ -96,6 +96,7 @@ else:
     df=user_input_features()
 st.write(df)
 df2=df[1]
+df2.drop([1], axis=0, inplace=True)
 st.write(df2)
 name=df[0]
 end=df[2]
@@ -123,7 +124,7 @@ with row2_2:
 #Create a new dataframe with only the 'Close' column
 data = df2['A']
 data=data.rename(columns={'A': 'Close'})
-st.write(data)
+
 #data
 
 #Converting the dataframe to a numpy array
