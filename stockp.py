@@ -94,11 +94,7 @@ else:
         df=yf.download(stock, start='2012-01-01', end=end)
         return name, df, end
     df=user_input_features()
-st.write(df)
-#df.drop([0,1], axis=0, inplace=True)
 df2=df[1]
-
-st.write(df2)
 name=df[0]
 end=df[2]
 
@@ -123,14 +119,11 @@ with row2_2:
 
 
 #Create a new dataframe with only the 'Close' column
-data = df2['A']
-#data=data.rename(columns={'A': 'Close'})
-
+data = df2.filter(['Close'])
 #data
 
 #Converting the dataframe to a numpy array
 dataset = data.values
-
 #dataset
 
 #Get /Compute the number of rows to train the model on
