@@ -120,6 +120,7 @@ with row2_2:
 
 #Create a new dataframe with only the 'Close' column
 data = df2['Close'][1:]
+st.write(data)
 #data
 
 #Converting the dataframe to a numpy array
