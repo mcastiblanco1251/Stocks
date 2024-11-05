@@ -119,7 +119,7 @@ with row2_2:
 
 
 #Create a new dataframe with only the 'Close' column
-data = df2['Close'][1:]
+data = df2['A']#[1:]
 st.write(data)
 #data
 
