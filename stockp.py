@@ -94,7 +94,7 @@ else:
         df=yf.download(stock, start='2012-01-01', end=end)
         return name, df, end
     df=user_input_features()
-df2=df2 = pd.DataFrame(df.values)
+df2= pd.DataFrame(df.values)
 df2.columns=['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
 name=df[0]
 end=df[2]
