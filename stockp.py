@@ -95,6 +95,7 @@ else:
         return name, df, end
     df=user_input_features()
 df2=df[1]
+st.write(df2)
 name=df[0]
 end=df[2]
 
@@ -119,7 +120,7 @@ with row2_2:
 
 
 #Create a new dataframe with only the 'Close' column
-data = df2.filter(['Close'])[2:]
+data = df2.filter(['Close'])
 st.write(data)
 #data
 
