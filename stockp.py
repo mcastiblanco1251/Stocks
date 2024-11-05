@@ -94,6 +94,7 @@ else:
         df=yf.download(stock, start='2012-01-01', end=end)
         return name, df, end
     df=user_input_features()
+st.write(df)
 df2=df[1]
 name=df[0]
 end=df[2]
@@ -126,7 +127,7 @@ st.write(data)
 
 #Converting the dataframe to a numpy array
 dataset = data.values
-st.write(dataset)
+
 #dataset
 
 #Get /Compute the number of rows to train the model on
