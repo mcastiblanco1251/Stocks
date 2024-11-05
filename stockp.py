@@ -97,6 +97,7 @@ else:
 df2=df[1]
 name=df[0]
 end=df[2]
+
 st.header('Representation')
 
 st.subheader('Company Name: '+ name )
@@ -118,7 +119,7 @@ with row2_2:
 
 
 #Create a new dataframe with only the 'Close' column
-data = df2.filter(['Close'])
+data = df2['Close'][1:]
 #data
 
 #Converting the dataframe to a numpy array
