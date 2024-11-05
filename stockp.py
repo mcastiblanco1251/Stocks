@@ -125,6 +125,7 @@ st.write(data)
 
 #Converting the dataframe to a numpy array
 dataset = data.values
+st.write(dataset)
 #dataset
 
 #Get /Compute the number of rows to train the model on
