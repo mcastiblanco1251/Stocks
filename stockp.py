@@ -95,8 +95,8 @@ else:
         return name, df, end
     df=user_input_features()
 df2= pd.DataFrame(df[1].values, index=df[1].index)
-st.write(df2)
-df2.columns=['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']
+#st.write(df2)
+df2.columns=['Open', 'High', 'Low', 'Close', 'Adj Close']#, 'Volume']
 name=df[0]
 end=df[2]
 
